@@ -29,12 +29,10 @@ namespace _05.BitArray64
         //-----------CONSTRUCTOR-------------//
         public BitArray64(object longNumber)
         {
-
-
-            ulong checher;
-            if (ulong.TryParse(longNumber.ToString(), out checher))
+            ulong chechker;
+            if (ulong.TryParse(longNumber.ToString(), out checker))
             {
-                this.ULongNumber = checher;
+                this.ULongNumber = checker;
             }
             else
             {
@@ -91,9 +89,9 @@ namespace _05.BitArray64
             get
             {
                 if (index > 63 || index < 0)
-              {
-		            throw new ArgumentException("index");
- 	            }
+              	{
+	            throw new ArgumentException("index");
+             	}
                 return Convert.ToInt32((((ulong)1 << index) & this.ULongNumber) >> index);
             }
         }
